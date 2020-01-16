@@ -21,9 +21,9 @@ java -jar target/azure-core-benchmarks.jar -wi 2 -i 2 -f 1 -t 100
 
 Here is some sample benchmark results. 
 
-As you noticed throughput of 
-logDebug_CheckLevel_DebugIsDisabled_SLF4J compared to 
-logDebug_CheckLevel_DebugIsDisabled_AzureLogger is 422586263/5275716 which 80x.
+Please note that the throughput of 
+`logDebug_CheckLevel_DebugIsDisabled_SLF4J` compared to 
+`logDebug_CheckLevel_DebugIsDisabled_AzureLogger` is `422586263/5275716` which `80x`.
 
 
 ```bash
