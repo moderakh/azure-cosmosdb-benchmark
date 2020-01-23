@@ -42,3 +42,27 @@ AzureCoreLoggerVsSlf4jPerf.logInfo_InfoIsEnabled_AzureLogger                thrp
 AzureCoreLoggerVsSlf4jPerf.logInfo_InfoIsEnabled_sf4j                       thrpt    2     238016.150          ops/s
 ```
 
+
+
+
+# cosmos benchmark
+
+compare `commons-lang3 EnumUtil.getEnum with cached enum in a HashMap`
+
+
+``` bash
+# Run complete. Total time: 00:00:55
+
+Benchmark                              Mode  Cnt           Score   Error  Units
+Enums.cachedHashMap_BoundedStaleness  thrpt    2  3226017038.920          ops/s
+Enums.cachedHashMap_Eventual          thrpt    2  3134522640.414          ops/s
+Enums.cachedHashMap_Session           thrpt    2  3235240152.489          ops/s
+Enums.cachedHashMap_Strong            thrpt    2  3200633950.909          ops/s
+Enums.cachedTreeMap_BoundedStaleness  thrpt    2  1138294149.645          ops/s
+Enums.cachedTreeMap_Eventual          thrpt    2  1046035860.761          ops/s
+Enums.cachedTreeMap_Session           thrpt    2  2418209606.251          ops/s
+Enums.cachedTreeMap_Strong            thrpt    2  1344476740.609          ops/s
+Enums.enumUtils_BoundedStaleness      thrpt    2    18577946.566          ops/s
+Enums.enumUtils_Session               thrpt    2    33308251.665          ops/s
+```
+
