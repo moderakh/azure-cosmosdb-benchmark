@@ -45,7 +45,7 @@ AzureCoreLoggerVsSlf4jPerf.logInfo_InfoIsEnabled_sf4j                       thrp
 
 
 
-# cosmos benchmark
+# Cosmos Enum benchmark
 
 compare `commons-lang3 EnumUtil.getEnum with cached enum in a HashMap`
 
