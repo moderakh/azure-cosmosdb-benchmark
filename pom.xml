@@ -17,7 +17,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jmh.version>1.16</jmh.version>
     <javac.target>1.8</javac.target>
-    <uberjar.name>azure-core-benchmarks</uberjar.name>
+    <uberjar.name>azure-cosmosdb-benchmarks</uberjar.name>
   </properties>
 
   <dependencies>
