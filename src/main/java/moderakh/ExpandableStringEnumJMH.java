@@ -36,7 +36,7 @@ public class ExpandableStringEnumJMH {
 
     @Benchmark
     @BenchmarkMode({Mode.Throughput})
-    public void cosmosEnum() {
+    public void cosmosStringEnum() {
         String requestConsistencyLevelAsString = "Eventual";
         ConsistencyLevel requestConsistencyLevel = ConsistencyLevel.readFromStringUsingHashMapImplementation(requestConsistencyLevelAsString);
     }
@@ -51,7 +51,7 @@ public class ExpandableStringEnumJMH {
     /**
      * To run this benchmark:
      *
-     * java -jar target/benchmarks.jar -wi 2 -i 2 -f 1 -t 100
+     * java -jar target/azure-cosmosdb-benchmarks.jar moderakh.ExpandableStringEnumJMH   -wi 5 -i 5 -f 1 -t 100
      *
      * @param args
      * @throws RunnerException
