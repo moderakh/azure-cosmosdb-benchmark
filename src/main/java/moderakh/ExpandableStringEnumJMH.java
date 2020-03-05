@@ -1,8 +1,6 @@
 package moderakh;
 
-import com.azure.core.util.Configuration;
 import com.azure.core.util.ExpandableStringEnum;
-import com.azure.core.util.logging.ClientLogger;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
 import org.openjdk.jmh.annotations.Level;
@@ -14,9 +12,8 @@ import org.openjdk.jmh.runner.Runner;
 import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
-import org.slf4j.LoggerFactory;
-@State(Scope.Thread)
 
+@State(Scope.Thread)
 public class ExpandableStringEnumJMH {
 
     public static class ConsistencyExpandableEnumString extends com.azure.core.util.ExpandableStringEnum {
