@@ -16,7 +16,7 @@ import org.openjdk.jmh.runner.options.OptionsBuilder;
 @State(Scope.Thread)
 public class ExpandableStringEnumJMH {
 
-    public static class ConsistencyExpandableEnumString extends com.azure.core.util.ExpandableStringEnum {
+    public static class ConsistencyExpandableEnumString extends com.azure.core.util.ExpandableStringEnum<ConsistencyExpandableEnumString> {
         public static final ConsistencyExpandableEnumString Strong = fromString("Strong");
         public static final ConsistencyExpandableEnumString Eventual = fromString("Eventual");
 
