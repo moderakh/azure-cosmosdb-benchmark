@@ -1,3 +1,4 @@
+import com.azure.cosmos.ConsistencyLevel;
 import com.azure.cosmos.CosmosAsyncClient;
 import com.azure.cosmos.CosmosAsyncContainer;
 import com.azure.cosmos.CosmosClientBuilder;
@@ -24,6 +25,7 @@ public class V401beta2 {
         CosmosAsyncClient client = new CosmosClientBuilder()
                 .endpoint(TestConfigurations.HOST)
                 .key(TestConfigurations.MASTER_KEY)
+                .consistencyLevel(ConsistencyLevel.EVENTUAL)
                 .buildAsyncClient();
 
         client.createDatabaseIfNotExists(DATABASE_NAME).block();
