@@ -5,7 +5,6 @@ import com.azure.cosmos.implementation.TestConfigurations;
 import com.azure.cosmos.implementation.guava25.base.Stopwatch;
 import com.azure.cosmos.models.CosmosAsyncItemResponse;
 import com.azure.cosmos.models.CosmosContainerProperties;
-import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.PartitionKey;
 
 import java.util.UUID;
@@ -29,7 +28,7 @@ public class V401beta2 {
 
         client.createDatabaseIfNotExists(DATABASE_NAME).block();
         CosmosContainerProperties cosmosContainerProperties = new CosmosContainerProperties(CONTAINER_NAME, "/id");
-        client.getDatabase(DATABASE_NAME).createContainerIfNotExists(cosmosContainerProperties).block();
+        client.getDatabase(DATABASE_NAME).createContainerIfNotExists(cosmosContainerProperties, 10_000).block();
 
 
         CosmosAsyncContainer container = client.getDatabase(DATABASE_NAME).getContainer(CONTAINER_NAME);
@@ -55,7 +54,7 @@ public class V401beta2 {
 
         }
 
-        System.out.println("#" + cnt + " requests took more than 1 second" + cnt);
+        System.out.println("#" + cnt + " requests took more than 1 second");
 
         client.close();
 

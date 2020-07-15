@@ -1,3 +1,4 @@
+import com.azure.cosmos.ConsistencyLevel;
 import com.azure.cosmos.CosmosAsyncClient;
 import com.azure.cosmos.CosmosAsyncContainer;
 import com.azure.cosmos.CosmosClientBuilder;
@@ -6,6 +7,7 @@ import com.azure.cosmos.implementation.guava25.base.Stopwatch;
 import com.azure.cosmos.models.CosmosContainerProperties;
 import com.azure.cosmos.models.CosmosItemResponse;
 import com.azure.cosmos.models.PartitionKey;
+import com.azure.cosmos.models.ThroughputProperties;
 
 import java.util.UUID;
 
@@ -20,15 +22,15 @@ public class V410 {
     }
 
     public static void main(String[] args) {
-
         CosmosAsyncClient client = new CosmosClientBuilder()
                 .endpoint(TestConfigurations.HOST)
                 .key(TestConfigurations.MASTER_KEY)
+                .consistencyLevel(ConsistencyLevel.EVENTUAL)
                 .buildAsyncClient();
 
         client.createDatabaseIfNotExists(DATABASE_NAME).block();
         CosmosContainerProperties cosmosContainerProperties = new CosmosContainerProperties(CONTAINER_NAME, "/id");
-        client.getDatabase(DATABASE_NAME).createContainerIfNotExists(cosmosContainerProperties).block();
+        client.getDatabase(DATABASE_NAME).createContainerIfNotExists(cosmosContainerProperties, ThroughputProperties.createManualThroughput(10_000)).block();
 
 
         CosmosAsyncContainer container = client.getDatabase(DATABASE_NAME).getContainer(CONTAINER_NAME);
@@ -54,7 +56,7 @@ public class V410 {
             }
         }
 
-        System.out.println("#" + cnt + " requests took more than 1 second" + cnt);
+        System.out.println("#" + cnt + " requests took more than 1 second");
 
 
         client.close();
