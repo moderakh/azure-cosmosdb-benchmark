@@ -2,13 +2,14 @@ how to repro:
 
 # Build:
 
+The following will build a fat jar:
+
 ```bash
 git clone git@github.com:moderakh/azure-cosmosdb-benchmark.git
 cd ~/azure-cosmosdb-benchmark/simple/v410
 mvn clean package
 ```
 
-The above command will create a fat jar
 Create a file with the following content as `~/cosmos-v4.properties`
 
 ```
