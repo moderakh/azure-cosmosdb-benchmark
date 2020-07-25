@@ -18,5 +18,5 @@ ACCOUNT_KEY=XYZ
 
 # Run
 ```
-java -jar azure-cosmosdb-benchmark/simple/v410/target/simple-test-1.0-SNAPSHOT-jar-with-dependencies.jar
+java -jar target/simple-test-1.0-SNAPSHOT-jar-with-dependencies.jar
 ```
