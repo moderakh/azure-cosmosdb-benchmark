@@ -8,6 +8,7 @@ cd ~/azure-cosmosdb-benchmark/simple/v410
 mvn clean package
 ```
 
+The above command will create a fat jar
 Create a file with the following content as `~/cosmos-v4.properties`
 
 ```
