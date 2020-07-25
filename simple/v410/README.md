@@ -8,7 +8,7 @@ cd ~/azure-cosmosdb-benchmark/simple/v410
 mvn clean package
 ```
 
-put cosmosdb crendentials file with the following content in your ~/cosmos-v4.properties
+Create a file with the following content as `~/cosmos-v4.properties`
 
 ```
 ACCOUNT_HOST=https://test.documents.azure.com:443/
