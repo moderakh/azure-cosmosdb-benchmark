@@ -14,7 +14,7 @@ If you want to run on windows, you may need to update `log4j.appender.FILE.File=
 
 ```bash
 mvn clean package
-java -jar target/azure-core-benchmarks.jar -wi 2 -i 2 -f 1 -t 100
+java -jar target/azure-cosmosdb-benchmarks.jar -wi 2 -i 2 -f 1 -t 100
 ```
 
 ## sample benchmark results
